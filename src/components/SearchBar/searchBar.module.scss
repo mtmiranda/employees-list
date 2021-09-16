@@ -1,0 +1,22 @@
+@import 'utils/_master.scss';
+
+.searchWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & .inputWrapper {
+        padding: 10px;
+        width: 282px;
+        background: $white;
+        border: 1px solid #cdcdcd;
+        border-radius: 4px;
+    }
+
+    & .inputSearch {
+        background-image: url('../../assets/search-icon.svg');
+        background-repeat: no-repeat;
+        background-position: right 0px center;
+        background-size: 25px;
+        width: 100%;
+    }
+}
