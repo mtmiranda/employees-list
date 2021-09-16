@@ -1,8 +1,15 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from 'react';
+import Home from 'pages/Home';
+import Container from 'components/UI/Container';
+import { render } from '@testing-library/react';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('Componente Principal', () => {
+    describe('Quando eu abro o app de lista de funcionários', () => {
+        it('O componente Container é renderizado', () => {
+            render(<Container />);
+        });
+        it('O componente Home é renderizado', () => {
+            render(<Home />);
+        });
+    });
 });
