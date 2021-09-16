@@ -1,0 +1,70 @@
+@import 'utils/_master.scss';
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 93.75%;
+    }
+}
+
+@media (max-width: 720px) {
+    html {
+        font-size: 87.5%;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    max-width: 1270px;
+    @include blocks-spacing;
+    @include centered-block;
+
+    @media (max-width: $breakpoint-desk) {
+        max-width: $breakpoint-mb-large;
+    }
+
+    @media (max-width: $breakpoint-mb-large) {
+        max-width: $breakpoint-mb;
+    }
+
+    @media (max-width: $breakpoint-mb) {
+        max-width: $breakpoint-mb-small;
+    }
+    @media (max-width: $breakpoint-mb-small) {
+        max-width: $breakpoint-mb-ultra-small;
+    }
+}
+
+body {
+    background: $bg-body;
+    color: $text;
+    -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+textarea,
+button {
+    font: 400 1rem 'Roboto', sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+input,
+button {
+    outline: unset;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
