@@ -1,0 +1,7 @@
+@import 'utils/_master.scss';
+
+main {
+    & .employeeNotFound {
+        @include centered-item;
+    }
+}
