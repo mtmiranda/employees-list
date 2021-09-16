@@ -1,0 +1,31 @@
+@import 'utils/_master.scss';
+
+.headerContainer {
+    width: 100%;
+    background-color: $bg-header;
+
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+
+    & header {
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        max-width: 1270px;
+        margin: 0 auto;
+
+        @media (max-width: $breakpoint-desk) {
+            max-width: $breakpoint-mb-large;
+        }
+
+        @media (max-width: $breakpoint-mb-large) {
+            max-width: $breakpoint-mb;
+        }
+
+        @media (max-width: $breakpoint-mb) {
+            max-width: $breakpoint-mb-small;
+        }
+        @media (max-width: $breakpoint-mb-small) {
+            max-width: $breakpoint-mb-ultra-small;
+        }
+    }
+}
