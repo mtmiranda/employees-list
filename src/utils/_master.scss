@@ -1,0 +1,29 @@
+//VARIABLES
+$white: #ffffff;
+$bg-header: #1c1c1c;
+$bg-body: #f0f0f0;
+$thead-color: #5984c0;
+$text: #1c1c1c;
+
+//BREAKPOINTS
+$breakpoint-desk: 1270px;
+$breakpoint-mb-large: 992px;
+$breakpoint-mb: 768px;
+$breakpoint-mb-small: 576px;
+$breakpoint-mb-ultra-small: 400px;
+
+//MIXINS
+@mixin blocks-spacing {
+    padding: 40px 0;
+}
+
+@mixin centered-block {
+    margin: 0 auto;
+}
+
+@mixin centered-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
