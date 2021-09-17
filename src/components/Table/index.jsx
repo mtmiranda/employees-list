@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './table.module.scss';
 import TableItem from 'components/TableItem';
@@ -26,6 +27,11 @@ export const Table = ({ employees }) => {
             </div>
         </div>
     );
+};
+
+Table.propTypes = {
+    employees: PropTypes.array,
+    employee: PropTypes.object,
 };
 
 export default Table;

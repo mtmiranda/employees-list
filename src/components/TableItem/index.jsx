@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './tableItem.module.scss';
 
@@ -24,6 +25,11 @@ const TableItem = ({ employee }) => {
             <td>{formatPhoneNumber(employee.phone)}</td>
         </tr>
     );
+};
+
+TableItem.propTypes = {
+    employee: PropTypes.object,
+    formatPhoneNumber: PropTypes.func,
 };
 
 export default TableItem;
