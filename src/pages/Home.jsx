@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useDebounce } from 'Hooks/useDebounce';
+import PropTypes from 'prop-types';
 
 import Header from 'components/Header';
 import SearchBar from 'components/SearchBar';
 import Table from 'components/Table';
 
+import { useDebounce } from 'Hooks/useDebounce';
 import { api } from 'services/api';
 
 import styles from './home.module.scss';
@@ -13,7 +14,7 @@ import useLoader from 'Hooks/useLoader';
 function Home() {
     const [employees, setEmployees] = useState([]);
     const [searchValue, setSearchValue] = useState('');
-    const debouncedText = useDebounce(searchValue, 500);
+    const debouncedText = useDebounce(searchValue, 1000);
     const [loader, showLoader, hideLoader] = useLoader();
 
     useEffect(() => {
@@ -21,11 +22,11 @@ function Home() {
     }, [debouncedText]);
 
     const handleChange = (event) => {
-        const { value } = event.target;
-        setSearchValue(value);
+        const { value: debouncedText } = event.target;
+        setSearchValue(debouncedText);
     };
 
-    const filteredEmployees = !!searchValue
+    const filteredEmployees = !!debouncedText
         ? employees.filter((employee) => {
               const objEmployees = {
                   name: employee.name,
@@ -33,7 +34,7 @@ function Home() {
               };
               return `${objEmployees.name}${objEmployees.job}`
                   .toLowerCase()
-                  .includes(searchValue.toLowerCase());
+                  .includes(debouncedText.toLowerCase());
           })
         : employees;
 
@@ -83,5 +84,12 @@ function Home() {
         </>
     );
 }
+
+Home.propTypes = {
+    employees: PropTypes.array,
+    employee: PropTypes.object,
+    searchValue: PropTypes.node,
+    handleChange: PropTypes.func,
+};
 
 export default Home;
